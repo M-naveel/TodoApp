@@ -8,6 +8,7 @@ const initialState = {
     },
   ],
   editingTodoId: null,
+  filter: "all" ,
 };
 
 const todoSlice = createSlice({
@@ -28,6 +29,7 @@ const todoSlice = createSlice({
       state.todos = state.todos.filter((todo) => todo.id !== action.payload);
     },
     toggleTodo: (state , action )=>{
+      // change the todo to complete and undo with the same button
             const mark = state.todos.find(t => t.id === action.payload)
             if (mark){
                 mark.completed = !mark.completed
@@ -47,8 +49,12 @@ const todoSlice = createSlice({
       }
       state.editingTodoId = null; //this will clear the input
     },
+      // filter reducer to filter across the todos 
+    setFilter: (state , action )=>{
+      state.filter = action.payload
+    },
   },
 });
 
-export const { addTodo, removeTodo, editTodo, updateTodo , toggleTodo } = todoSlice.actions;
+export const { addTodo, removeTodo, editTodo, updateTodo , toggleTodo , setFilter } = todoSlice.actions;
 export default todoSlice.reducer;
