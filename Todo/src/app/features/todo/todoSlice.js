@@ -1,12 +1,22 @@
 import { createSlice, nanoid } from "@reduxjs/toolkit";
+// import { store } from "../../store";
+
+
+
+const loadfromStorage =()=> {
+  try{
+    const stored = localStorage.getItem("todos");
+    return stored ? JSON.parse(stored) : [];
+  }
+  catch(error)
+  {
+    return []
+  }
+}
 
 const initialState = {
-  todos: [
-    {
-      id: 1,
-      text: " I am Naveel",
-    },
-  ],
+  
+  todos: loadfromStorage(),
   editingTodoId: null,
   filter: "all" ,
 };
