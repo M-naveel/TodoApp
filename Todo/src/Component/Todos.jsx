@@ -1,17 +1,34 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { removeTodo } from "../app/features/todo/todoSlice";
+import { removeTodo , setFilter} from "../app/features/todo/todoSlice";
 import { editTodo, toggleTodo } from "../app/features/todo/todoSlice";
+import FilterButton from "./FilterButton";
+
 
 function Todos() {
   const dispatch = useDispatch();
-  const todos = useSelector((state) => state.todos);
+  const {todos , filter} = useSelector((state) => state);
+  
+  const filterTodos = todos.filter(todo=>{
+    if(filter == "Completed") return todo.completed 
+    
+    if(filter == "incompleted") return !todo.completed
+    return true
+  })
+  
 
   return (
     <>
+    <FilterButton />
+
       {/* <div>Todos</div> */}
+      {
+        filterTodos.length === 0 ? (<p className="mt-2 bg-red-500 py-3 text-white text-lg rounded-lg hover:bg-pink-300 hover:text-black hover:text-xl">No todo is Found</p>)
+
+        :
+      (
       <ul className="list-none">
-        {todos.map((todo) => (
+        {filterTodos.map((todo) => (
           <li
            
             className="mt-4 flex justify-between items-center bg-zinc-800 px-4 py-2 rounded"
@@ -72,6 +89,8 @@ function Todos() {
           </li>
         ))}
       </ul>
+      )
+    }
     </>
   );
 }
