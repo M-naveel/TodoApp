@@ -5,3 +5,8 @@
   color: white;
 transition: 1s ease ;
 }
+
+body {
+    padding: 0;
+    margin:0;
+}
