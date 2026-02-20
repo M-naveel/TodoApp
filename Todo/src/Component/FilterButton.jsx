@@ -7,7 +7,7 @@ function FilterButton() {
   
     return (
     <>
-    <div className="filter flex items-center gap-2">
+    <div className="filter flex flex-wrap items-center gap-2">
       <h3 className='text-white'>Filter</h3>
             <button
             className="btn text-white bg-red-500 border-0 py-1 px-4 focus:outline-none hover:bg-red-600 rounded text-md"

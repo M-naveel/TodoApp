@@ -31,7 +31,7 @@ function Todos() {
         {filterTodos.map((todo) => (
           <li
            
-            className="mt-4 flex justify-between items-center bg-zinc-800 px-4 py-2 rounded"
+           className="mt-4 flex flex-col md:flex-row md:justify-between md:items-center bg-zinc-800 px-4 py-3 rounded gap-3"
             key={todo.id}
           >
             <div className="text-white  "  style={{
