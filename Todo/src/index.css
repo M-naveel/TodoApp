@@ -1,1 +1,7 @@
 @import "tailwindcss";
+.btn:focus{
+    
+  background-color: blue;
+  color: white;
+transition: 1s ease ;
+}

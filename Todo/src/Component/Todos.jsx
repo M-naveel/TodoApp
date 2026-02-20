@@ -23,7 +23,7 @@ function Todos() {
 
       {/* <div>Todos</div> */}
       {
-        filterTodos.length === 0 ? (<p className="mt-2 bg-red-500 py-3 text-white text-lg rounded-lg hover:bg-pink-300 hover:text-black hover:text-xl">No todo is Found</p>)
+        filterTodos.length === 0 ? (<p className="mt-2 bg-red-500 py-3 text-white text-lg rounded-lg  ">No todo is Found</p>)
 
         :
       (
