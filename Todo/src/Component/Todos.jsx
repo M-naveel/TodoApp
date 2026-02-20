@@ -19,6 +19,9 @@ function Todos() {
 
   return (
     <>
+    <div className="main-content">
+
+    
     <FilterButton />
 
       {/* <div>Todos</div> */}
@@ -91,6 +94,7 @@ function Todos() {
       </ul>
       )
     }
+    </div>
     </>
   );
 }

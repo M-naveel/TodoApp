@@ -11,12 +11,15 @@ function App() {
 
   return (
     <>    
+    <div className="page-content">
+
     
           <Navbar />
           <AddTodo />
           <Todos />
           <Footer />
     
+    </div>
     </>
   )
 }
